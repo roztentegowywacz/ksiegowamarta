@@ -8,6 +8,10 @@
   },
   "author": "Tomasz Klag",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roztentegowywacz/ksiegowamarta.git"
+  },
   "dependencies": {
     "bootstrap": "^4.1.3",
     "jquery": "^3.3.1",
