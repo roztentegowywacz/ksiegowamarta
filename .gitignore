@@ -1,0 +1,5 @@
+# Ignore graphic project
+od_grafika/
+
+#Ignore node_modules directory
+src/node_modules
