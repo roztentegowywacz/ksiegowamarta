@@ -1,0 +1,79 @@
+#poznaj-nas {
+    background-image: url("../images/1x/bg-circles.jpg");
+    background-position: center;
+    background-size: cover;
+
+    .title {
+    position: absolute;
+    z-index: 100;
+    padding-top: 60px;
+    // text-align: right;
+    right: 15px;
+    font-size: 28px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+}
+.foto-main {
+    margin-top: 50px;
+    width: 100%;
+    height: 700px;
+    background-image: url("../images/1x/foto-main.png");
+    background-position: 50% 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+
+.content
+{
+    background: rgb(176,88,65);
+    background: linear-gradient(135deg, rgba(176,88,65,1) 0%, rgba(168,83,61,1) 30%, rgba(128,60,43,1) 77%, rgba(123,57,41,1) 100%); 
+    padding: 15px;
+    
+    h1 {
+        padding: 50px 0 25px 0;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        line-height: 30px;
+        font-size: 24px;
+        color: $white;
+    }
+    p {
+        color: $white;
+        font-size: 23px;
+        line-height: 30px;
+        margin-bottom: 25px;
+    }
+    
+}
+.mountains {
+    .triangle {
+        display: inline-block;
+        margin: 0;
+        vertical-align: bottom;
+    }
+    .triangle-0 {
+        width: 30px;
+        height: 30px;
+        border-bottom: solid 25px $white;
+        border-left: solid 15px transparent;
+        border-right: solid 15px transparent;
+    }
+    .triangle-1 {
+        width: 50px;
+        height: 50px;
+        border-bottom: solid 40px $white;
+        border-left: solid 25px transparent;
+        border-right: solid 25px transparent;
+    }
+    .triangle-2 {
+        width: 40px;
+        height: 40px;
+        border-bottom: solid 32px $white;
+        border-left: solid 20px transparent;
+        border-right: solid 20px transparent;
+    }
+}

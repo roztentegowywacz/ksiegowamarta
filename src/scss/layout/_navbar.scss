@@ -1,0 +1,19 @@
+#main-nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: $white;
+    z-index: 100;
+    // height: 50px;
+    a {
+        display: block;
+        height: 50px;
+        margin: 0;
+        padding: 0;
+        white-space: nowrap;
+        img {
+            vertical-align: middle;
+            // height: 10px;
+        }
+    }
+}

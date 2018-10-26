@@ -5,15 +5,22 @@
 $main-font: 'Tenor Sans', sans-serif;
 $heading-font: 'Archivo Black', sans-serif;
 
-// Sizes of font
-$font-size-default: 14px;
-$font-size-small: 0.618em;
-$font-size-regular: 1em;
-$font-size-large: 1.618em;
-$font-size-xx-large: 4.236em;
+$font-size-small: 9px;
+$font-size-regular: 14px;
+$font-size-large: 23px;
+$font-size-x-large: 37px;
+$font-size-xx-large: 59px;
+
+$font-weight-light:     300;
+$font-weight-normal:    400;
+$font-weight-bold:      700;
 
 // Colors
+$white: #FFF;
 $mist: #9FACBF;
 $stone: #4C6580;
 $shadow: #2A3132;
 $foliage: #753626;
+
+// Dimensions
+$d-100: 100vh;
