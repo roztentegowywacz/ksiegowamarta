@@ -2361,11 +2361,11 @@ table {
 
 @media (min-width: 1200px) {
   #masthead .ramka {
-    padding: 2.75%;
+    padding: 2.75% 0;
     height: 400px;
   }
   #masthead h4 {
-    font-size: 5.3em;
+    font-size: 5.0em;
   }
   #masthead p {
     font-size: 1.6em;
@@ -2377,6 +2377,8 @@ table {
   background-image: url("../images/1x/bg-circles.jpg");
   background-position: center;
   background-size: cover;
+  position: relative;
+  padding-bottom: 60px;
 }
 
 #poznaj-nas .title {
@@ -2389,11 +2391,18 @@ table {
   letter-spacing: 0.25em;
 }
 
+@media (min-width: 1200px) {
+  #poznaj-nas .title {
+    font-size: 2.4em;
+    padding-top: 110px;
+  }
+}
+
 .foto-main {
   margin-top: 50px;
   width: 100%;
   min-height: 500px;
-  max-height: 700px;
+  max-height: 900px;
   background-image: url("../images/1x/foto-main.png");
   background-position: 50% 70px;
   background-size: contain;
@@ -2414,6 +2423,19 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  .foto-main {
+    position: absolute;
+    background-position: 0 100%;
+    z-index: 50;
+    left: 5%;
+    bottom: 0;
+    background-size: contain;
+    height: 95%;
+    width: 37.5%;
+  }
+}
+
 .nopadding {
   padding: 0;
 }
@@ -2427,6 +2449,13 @@ table {
 @media (min-width: 768px) {
   .content {
     padding: 50px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    margin: 250px 0 110px 0;
+    padding: 50px 0 25px 0;
   }
 }
 
@@ -2487,7 +2516,6 @@ table {
 }
 
 #oferta {
-  margin-top: 60px;
   background-image: url("../images/1x/offer-img-3-other.jpg");
   background-position: 60% 160%;
   overflow: hidden;
@@ -2519,6 +2547,13 @@ table {
 @media (min-width: 992px) {
   #oferta h1 {
     padding-bottom: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #oferta h1 {
+    padding-bottom: 295px;
+    font-size: 2.4em;
   }
 }
 
@@ -2561,13 +2596,13 @@ table {
 @media (min-width: 992px) {
   #oferta .maska2 {
     display: block;
-    width: 80%;
-    height: 800px;
+    width: 100%;
+    height: 1000px;
     position: absolute;
-    left: -10%;
+    left: -30%;
     bottom: 0;
-    border-top: solid 800px #4c6580;
-    border-right: solid 500px transparent;
+    border-top: solid 1000px #4c6580;
+    border-right: solid 400px transparent;
   }
 }
 
@@ -2593,6 +2628,12 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  #oferta h3 {
+    font-size: 4.2em;
+  }
+}
+
 #oferta ol {
   margin-bottom: 60px;
   color: #FFF;
@@ -2603,6 +2644,13 @@ table {
   #oferta ol {
     font-size: 1em;
     line-height: 1.5em;
+  }
+}
+
+@media (min-width: 1200px) {
+  #oferta ol {
+    font-size: 1.6em;
+    margin-bottom: 110px;
   }
 }
 
@@ -2625,6 +2673,13 @@ table {
   letter-spacing: 4px;
 }
 
+@media (min-width: 1200px) {
+  #wspolpraca .title {
+    font-size: 2.4em;
+    padding: 110px 0;
+  }
+}
+
 #wspolpraca .content-1 {
   background: #b05841;
   background: linear-gradient(135deg, #b05841 0%, #a8533d 30%, #803c2b 77%, #7b3929 100%);
@@ -2643,6 +2698,13 @@ table {
   #wspolpraca .content-1 {
     min-height: 575px;
     padding: 40px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  #wspolpraca .content-1 {
+    min-height: 400px;
+    height: 470px;
   }
 }
 
@@ -2667,6 +2729,14 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  #wspolpraca .content-2 {
+    background: transparent;
+    min-height: 400px;
+    height: 470px;
+  }
+}
+
 #wspolpraca .content-2 h2 {
   color: #753626;
 }
@@ -2674,6 +2744,12 @@ table {
 @media (min-width: 992px) {
   #wspolpraca .content-2 h2 {
     color: #FFF;
+  }
+}
+
+@media (min-width: 1200px) {
+  #wspolpraca .content-2 h2 {
+    color: #753626;
   }
 }
 
@@ -2687,6 +2763,26 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  #wspolpraca .content-2 p {
+    color: #2A3132;
+  }
+}
+
+@media (min-width: 1200px) {
+  #wspolpraca .center-image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 #wspolpraca .cropped {
   width: 90%;
   margin: 0 auto;
@@ -2695,6 +2791,27 @@ table {
 @media (min-width: 768px) {
   #wspolpraca .cropped {
     width: 70%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #wspolpraca .cropped {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
 }
 
@@ -2724,6 +2841,14 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  #wspolpraca img {
+    max-width: 350px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 #wspolpraca h2 {
   font-size: 2em;
   text-transform: uppercase;
@@ -2748,6 +2873,12 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  #wspolpraca h2 {
+    font-size: 2.6em;
+  }
+}
+
 #wspolpraca p {
   font-size: 1.6em;
   padding-top: 20px;
@@ -2766,6 +2897,13 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  #wspolpraca p {
+    font-size: 1.6em;
+    line-height: 1.5em;
+  }
+}
+
 #kontakt {
   color: #FFF;
   background: #97a6b9;
@@ -2777,12 +2915,25 @@ table {
 }
 
 #kontakt .information-container {
-  padding: 60px 0;
+  padding: 60px 15px;
+}
+
+@media (min-width: 1200px) {
+  #kontakt .information-container {
+    padding: 110px 0;
+  }
 }
 
 #kontakt h1 {
   font-size: 2em;
   text-transform: uppercase;
+}
+
+@media (min-width: 1200px) {
+  #kontakt h1 {
+    font-size: 2.6em;
+    padding-bottom: 45px;
+  }
 }
 
 #kontakt p {
@@ -2795,9 +2946,21 @@ table {
   }
 }
 
+@media (min-width: 1200px) {
+  #kontakt p {
+    font-size: 1.5em;
+  }
+}
+
 #kontakt i {
   font-size: 2.8em;
   padding-bottom: 10px;
+}
+
+@media (min-width: 1200px) {
+  #kontakt i {
+    padding-bottom: 25px;
+  }
 }
 
 #kontakt span {
@@ -2812,6 +2975,12 @@ table {
 @media (min-width: 768px) {
   #kontakt .information-box {
     padding-top: 60px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #kontakt .information-box {
+    padding-top: 40px;
   }
 }
 
@@ -2860,7 +3029,6 @@ footer img {
 
 body,
 html {
-  width: 100%;
   height: 100%;
 }
 
@@ -2868,6 +3036,7 @@ body {
   font-family: "Tenor Sans", sans-serif;
   font-size: 10px;
   line-height: 2.1em;
+  overflow-x: hidden;
 }
 
 @media (min-width: 480px) {

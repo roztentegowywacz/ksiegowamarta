@@ -9,6 +9,10 @@
         padding: 60px 0;
         text-align: right;
         letter-spacing: 4px;
+        @include xl {
+            font-size: 2.4em;
+            padding: 110px 0;
+        }
     }
     .content-1 {
         background: rgb(176,88,65);
@@ -22,6 +26,10 @@
         @include lg {
             min-height: 575px;
             padding: 40px 0;
+        }
+        @include xl {
+            min-height: 400px;
+            height: 470px;
         }
     }
     .content-2 {
@@ -37,10 +45,18 @@
             min-height: 575px;
             padding: 40px 0;
         }
+        @include xl {
+            background: transparent;
+            min-height: 400px;
+            height: 470px;
+        }
         h2 {
             color: $foliage;
             @include lg {
                 color: $white;
+            }
+            @include xl {
+                color: $foliage;
             }
         }
         p {
@@ -48,6 +64,16 @@
             @include lg {
                 color: $white;
             }
+            @include xl {
+                color: $shadow;
+            }
+        }
+    }
+    .center-image {
+        @include xl {
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
     }
     .cropped {
@@ -55,6 +81,16 @@
         margin: 0 auto;
         @include md {
             width: 70%;
+        }
+        @include xl {
+            margin: 0;
+            width: 100%;
+            text-align: left;
+            padding: 0 10%;
+            display: flex;
+            justify-content:center;
+            align-content:center;
+            flex-direction:column; 
         }
     }
     img {
@@ -72,6 +108,11 @@
             padding-bottom: 60px;
             max-width: 45%;
         }
+        @include xl {
+            max-width: 350px;
+            margin: 0;
+            padding: 0;
+        }
     }
     h2 {
         font-size: 2em;
@@ -87,6 +128,9 @@
         @include lg {
             font-size: 1.6em;
         }
+        @include xl {
+            font-size: 2.6em;
+        }
     }
     p {
         font-size: 1.6em;
@@ -96,6 +140,10 @@
         }
         @include lg {
             font-size: 1em;
+            line-height: 1.5em;
+        }
+        @include xl {
+            font-size: 1.6em;
             line-height: 1.5em;
         }
     }

@@ -6,21 +6,34 @@
         padding: 0;
     }
     .information-container {
-        padding: 60px 0;
+        padding: 60px 15px;
+        @include xl {
+            padding: 110px 0;
+        }
     }
     h1 {
         font-size: 2em;
         text-transform: uppercase;
+        @include xl {
+            font-size: 2.6em;
+            padding-bottom: 45px;
+        }
     }
     p {
         font-size: 1.5em;
         @include lg {
             font-size: 1em;
         }
+        @include xl {
+            font-size: 1.5em;
+        }
     }
     i {
         font-size: 2.8em;
         padding-bottom: 10px;
+        @include xl {
+            padding-bottom: 25px;
+        }
     }
     span {
         font-family: $heading-font;
@@ -30,6 +43,9 @@
         padding-top: 40px;
         @include md {
             padding-top: 60px;
+        }
+        @include xl {
+            padding-top: 40px;
         }
     }
 }

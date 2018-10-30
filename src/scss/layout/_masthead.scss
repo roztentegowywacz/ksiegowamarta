@@ -77,11 +77,11 @@
     }
     @include xl {
         .ramka {
-            padding: 2.75%;
+            padding: 2.75% 0;
             height: 400px;
         }
         h4 {
-            font-size: 5.3em;
+            font-size: 5.0em;
             // display: inline-block;
             // padding: 0 0.2em;
         }
