@@ -3,13 +3,25 @@
     background-image: url("../images/1x/offer-img-3-other.jpg");
     background-position: 60% 160%;
     overflow: hidden;
+    @include lg {
+        background-position: 70% 80%;
+    }
 
     h1 {
         color: $white;
         text-transform: uppercase;
-        font-size: 28px;
+        font-size: 2em;
         padding-top: 60px;
         padding-bottom: 215px;
+        display: block;
+        position: relative;
+        z-index: 50;
+        @include md {
+            padding-bottom: 465px;
+        }
+        @include lg {
+            padding-bottom: 220px;
+        }
     }
     .top {
         z-index: 50;
@@ -27,6 +39,25 @@
         bottom: 0;
         border-bottom: solid 625px rgba(76,101,128,1);
         border-right: solid 1300px transparent;
+        @include md {
+            left: -50px;
+        }
+        @include lg {
+            display: none;
+        }
+    }
+    .maska2 {
+        display: none;
+        @include lg {
+            display: block;
+            width: 80%;
+            height: 800px;
+            position: absolute;
+            left: -10%;
+            bottom: 0;
+            border-top: solid 800px rgba(76,101,128,1);
+            border-right: solid 500px transparent;
+        }
     }
     .mountains {
         .triangle-0 {
@@ -40,19 +71,25 @@
     }
 
     h3 {
-        font-size: 37px;
+        font-size: 2.6em;
         color: $white;
         padding: 40px 0;
         text-transform: uppercase;
+        @include lg {
+            padding: 45px 0 35px 0;
+        }
     }
     ol {
         margin-bottom: 60px;
         color: $white;
-        list-style-type: '> ';
-        padding-left: 5%;
+        font-size: 1.6em;
+        @include lg {
+            font-size: 1em;
+            line-height: 1.5em;
+        }
+        
         li {
             margin-bottom: 10px;
-            font-size: 23px;
         }
     }
 }

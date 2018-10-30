@@ -32,6 +32,7 @@
 @import 'layout/oferta';
 @import 'layout/wspolpraca';
 @import 'layout/kontakt';
+@import 'layout/footer';
 
 body,
 html {
@@ -41,7 +42,11 @@ html {
 
 body {
     font-family: $main-font;
-    line-height: 1.25;
+    font-size: 10px;
+    line-height: 2.1em;
+    @include xs {
+        font-size: 14px;
+    }
 }
 
 h1,
@@ -52,4 +57,5 @@ h5,
 h6 {
     font-family: $heading-font;
     font-weight: 400;
+    letter-spacing: 0.05em;
 }

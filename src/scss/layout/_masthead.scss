@@ -1,28 +1,98 @@
 // Styling for the masthead
 #masthead {
-    height: 100%;
-    position: absolute;
+    min-height: 100%;
     top: 0;
     background-image: url('../images/1x/bg-mountains.jpg');
     background-repeat: no-repeat;
-    background-position: center top;
+    background-position: 0% 40%;
     color: $white;
-    font-size: $font-size-large;
     text-align: center;
     
     h4 {
         text-transform: uppercase;
-        font-size: 53px;
-    }
-
-    span {
-        font-weight: $font-weight-bold;
-        font-family: $heading-font;
+        font-size: 3.8em;
+        line-height: 1.25em;
     }
     
-    .motto {
-        font-size: $font-size-x-large;
+    p {
+        margin-top: 35px;
+        font-size: 1.6em;
+    }
+    
+    span {
+        font-family: $heading-font;
+    }
+
+    .ramka {
         margin-top: 40%;
-        margin-bottom: 35px;
+    }
+    .mountains-img {
+        display: none;
+    }
+    
+    @include md {
+        .ramka {
+            // margin-top: 20%;
+            margin-top: 50vh;
+            transform: translateY(-(515px / 2));
+            padding: 10% 5%;
+            height: 515px;
+            border: $white 3px solid;
+            position: relative;
+        }
+        h4 {
+            line-height: 1em;
+            letter-spacing: 0;
+        }
+        .mountains-img {
+            display: block;
+            img {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                display: block;
+            }
+        }
+    }
+    @include lg {
+        .ramka {
+            padding: 5%;
+            height: 300px;
+        }
+        h4 {
+            font-size: 4.2em;
+            display: inline-block;
+            padding: 0 0.2em;
+        }
+        p {
+            font-size: 1em;
+            line-height: 1.5em;
+            margin-top: 35px;
+            padding: 0 80px;
+        }
+        span:first-child {
+            display: block;
+        }
+    }
+    @include xl {
+        .ramka {
+            padding: 2.75%;
+            height: 400px;
+        }
+        h4 {
+            font-size: 5.3em;
+            // display: inline-block;
+            // padding: 0 0.2em;
+        }
+        p {
+            font-size: 1.6em;
+            // line-height: 1.5em;
+            // margin-top: 35px;
+            padding: 0 10%;
+        }
+        span:first-child {
+            // display: block;
+        }
     }
 }

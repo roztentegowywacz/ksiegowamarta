@@ -2203,6 +2203,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 0;
   border: 0;
   font-size: 100%;
+  font-weight: 400;
   vertical-align: baseline;
 }
 
@@ -2248,12 +2249,20 @@ table {
   height: 100vh;
 }
 
+@media (max-width: 768px) {
+  #main-nav .container {
+    width: 100%;
+    max-width: none;
+  }
+}
+
 #main-nav {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: #FFF;
   z-index: 100;
+  width: 100%;
 }
 
 #main-nav a {
@@ -2266,34 +2275,102 @@ table {
 
 #main-nav a img {
   vertical-align: middle;
+  max-width: 100%;
 }
 
 #masthead {
-  height: 100%;
-  position: absolute;
+  min-height: 100%;
   top: 0;
   background-image: url("../images/1x/bg-mountains.jpg");
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: 0% 40%;
   color: #FFF;
-  font-size: 23px;
   text-align: center;
 }
 
 #masthead h4 {
   text-transform: uppercase;
-  font-size: 53px;
+  font-size: 3.8em;
+  line-height: 1.25em;
+}
+
+#masthead p {
+  margin-top: 35px;
+  font-size: 1.6em;
 }
 
 #masthead span {
-  font-weight: 700;
   font-family: "Archivo Black", sans-serif;
 }
 
-#masthead .motto {
-  font-size: 37px;
+#masthead .ramka {
   margin-top: 40%;
-  margin-bottom: 35px;
+}
+
+#masthead .mountains-img {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #masthead .ramka {
+    margin-top: 50vh;
+    -webkit-transform: translateY(-257.5px);
+            transform: translateY(-257.5px);
+    padding: 10% 5%;
+    height: 515px;
+    border: #FFF 3px solid;
+    position: relative;
+  }
+  #masthead h4 {
+    line-height: 1em;
+    letter-spacing: 0;
+  }
+  #masthead .mountains-img {
+    display: block;
+  }
+  #masthead .mountains-img img {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  #masthead .ramka {
+    padding: 5%;
+    height: 300px;
+  }
+  #masthead h4 {
+    font-size: 4.2em;
+    display: inline-block;
+    padding: 0 0.2em;
+  }
+  #masthead p {
+    font-size: 1em;
+    line-height: 1.5em;
+    margin-top: 35px;
+    padding: 0 80px;
+  }
+  #masthead span:first-child {
+    display: block;
+  }
+}
+
+@media (min-width: 1200px) {
+  #masthead .ramka {
+    padding: 2.75%;
+    height: 400px;
+  }
+  #masthead h4 {
+    font-size: 5.3em;
+  }
+  #masthead p {
+    font-size: 1.6em;
+    padding: 0 10%;
+  }
 }
 
 #poznaj-nas {
@@ -2307,19 +2384,38 @@ table {
   z-index: 100;
   padding-top: 60px;
   right: 15px;
-  font-size: 28px;
+  font-size: 2em;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 0.25em;
 }
 
 .foto-main {
   margin-top: 50px;
   width: 100%;
-  height: 700px;
+  min-height: 500px;
+  max-height: 700px;
   background-image: url("../images/1x/foto-main.png");
   background-position: 50% 70px;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .foto-main {
+    margin-top: 0;
+    background-size: 50%;
+    min-height: 575px;
+  }
+}
+
+@media (min-width: 992px) {
+  .foto-main {
+    min-height: 750px;
+  }
+}
+
+.nopadding {
+  padding: 0;
 }
 
 .content {
@@ -2328,20 +2424,36 @@ table {
   padding: 15px;
 }
 
+@media (min-width: 768px) {
+  .content {
+    padding: 50px 0;
+  }
+}
+
 .content h1 {
   padding: 50px 0 25px 0;
   text-transform: uppercase;
-  letter-spacing: 3px;
-  line-height: 30px;
-  font-size: 24px;
+  font-size: 1.7em;
   color: #FFF;
+}
+
+@media (min-width: 768px) {
+  .content h1 {
+    padding-bottom: 50px;
+  }
 }
 
 .content p {
   color: #FFF;
-  font-size: 23px;
-  line-height: 30px;
+  font-size: 1.6em;
   margin-bottom: 25px;
+}
+
+@media (min-width: 992px) {
+  .content p {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
 }
 
 .mountains .triangle {
@@ -2381,12 +2493,33 @@ table {
   overflow: hidden;
 }
 
+@media (min-width: 992px) {
+  #oferta {
+    background-position: 70% 80%;
+  }
+}
+
 #oferta h1 {
   color: #FFF;
   text-transform: uppercase;
-  font-size: 28px;
+  font-size: 2em;
   padding-top: 60px;
   padding-bottom: 215px;
+  display: block;
+  position: relative;
+  z-index: 50;
+}
+
+@media (min-width: 768px) {
+  #oferta h1 {
+    padding-bottom: 465px;
+  }
+}
+
+@media (min-width: 992px) {
+  #oferta h1 {
+    padding-bottom: 220px;
+  }
 }
 
 #oferta .top {
@@ -2409,6 +2542,35 @@ table {
   border-right: solid 1300px transparent;
 }
 
+@media (min-width: 768px) {
+  #oferta .maska {
+    left: -50px;
+  }
+}
+
+@media (min-width: 992px) {
+  #oferta .maska {
+    display: none;
+  }
+}
+
+#oferta .maska2 {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  #oferta .maska2 {
+    display: block;
+    width: 80%;
+    height: 800px;
+    position: absolute;
+    left: -10%;
+    bottom: 0;
+    border-top: solid 800px #4c6580;
+    border-right: solid 500px transparent;
+  }
+}
+
 #oferta .mountains .triangle-0 {
   width: 20px;
   height: 20px;
@@ -2419,22 +2581,33 @@ table {
 }
 
 #oferta h3 {
-  font-size: 37px;
+  font-size: 2.6em;
   color: #FFF;
   padding: 40px 0;
   text-transform: uppercase;
 }
 
+@media (min-width: 992px) {
+  #oferta h3 {
+    padding: 45px 0 35px 0;
+  }
+}
+
 #oferta ol {
   margin-bottom: 60px;
   color: #FFF;
-  list-style-type: '> ';
-  padding-left: 5%;
+  font-size: 1.6em;
+}
+
+@media (min-width: 992px) {
+  #oferta ol {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
 }
 
 #oferta ol li {
   margin-bottom: 10px;
-  font-size: 23px;
 }
 
 #wspolpraca {
@@ -2445,7 +2618,7 @@ table {
 
 #wspolpraca .title {
   color: #2A3132;
-  font-size: 28px;
+  font-size: 2em;
   text-transform: uppercase;
   padding: 60px 0;
   text-align: right;
@@ -2456,20 +2629,62 @@ table {
   background: #b05841;
   background: linear-gradient(135deg, #b05841 0%, #a8533d 30%, #803c2b 77%, #7b3929 100%);
   color: #FFF;
-  padding-bottom: 40px;
+  padding: 40px 0;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  #wspolpraca .content-1 {
+    padding: 85px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #wspolpraca .content-1 {
+    min-height: 575px;
+    padding: 40px 0;
+  }
 }
 
 #wspolpraca .content-2 {
-  padding: 30px 0;
+  padding: 40px 0;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  #wspolpraca .content-2 {
+    padding: 85px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  #wspolpraca .content-2 {
+    background: #b05841;
+    background: linear-gradient(135deg, #b05841 0%, #a8533d 30%, #803c2b 77%, #7b3929 100%);
+    color: #FFF;
+    min-height: 575px;
+    padding: 40px 0;
+  }
 }
 
 #wspolpraca .content-2 h2 {
   color: #753626;
 }
 
+@media (min-width: 992px) {
+  #wspolpraca .content-2 h2 {
+    color: #FFF;
+  }
+}
+
 #wspolpraca .content-2 p {
   color: #2A3132;
-  padding-bottom: 40px;
+}
+
+@media (min-width: 992px) {
+  #wspolpraca .content-2 p {
+    color: #FFF;
+  }
 }
 
 #wspolpraca .cropped {
@@ -2477,29 +2692,170 @@ table {
   margin: 0 auto;
 }
 
+@media (min-width: 768px) {
+  #wspolpraca .cropped {
+    width: 70%;
+  }
+}
+
 #wspolpraca img {
   display: block;
+  max-width: 70%;
   margin: 0 auto;
-  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 576px) {
+  #wspolpraca img {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 768px) {
+  #wspolpraca img {
+    padding-bottom: 85px;
+  }
+}
+
+@media (min-width: 992px) {
+  #wspolpraca img {
+    padding-bottom: 60px;
+    max-width: 45%;
+  }
 }
 
 #wspolpraca h2 {
-  font-size: 37px;
-  margin: 40px 0;
+  font-size: 2em;
   text-transform: uppercase;
 }
 
+@media (min-width: 576px) {
+  #wspolpraca h2 {
+    font-size: 2.6em;
+  }
+}
+
+@media (min-width: 768px) {
+  #wspolpraca h2 {
+    padding-bottom: 5px;
+    line-height: 1.2em;
+  }
+}
+
+@media (min-width: 992px) {
+  #wspolpraca h2 {
+    font-size: 1.6em;
+  }
+}
+
 #wspolpraca p {
-  font-size: 23px;
-  padding-bottom: 20px;
+  font-size: 1.6em;
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  #wspolpraca p {
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  #wspolpraca p {
+    font-size: 1em;
+    line-height: 1.5em;
+  }
+}
+
+#kontakt {
+  color: #FFF;
+  background: #97a6b9;
+  background: linear-gradient(135deg, #97a6b9 0%, #8595ac 30%, #60768e 60%, #576c87 100%);
 }
 
 #kontakt .container-fluid {
   padding: 0;
 }
 
+#kontakt .information-container {
+  padding: 60px 0;
+}
+
+#kontakt h1 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+#kontakt p {
+  font-size: 1.5em;
+}
+
+@media (min-width: 992px) {
+  #kontakt p {
+    font-size: 1em;
+  }
+}
+
+#kontakt i {
+  font-size: 2.8em;
+  padding-bottom: 10px;
+}
+
+#kontakt span {
+  font-family: "Archivo Black", sans-serif;
+  text-transform: uppercase;
+}
+
+#kontakt .information-box {
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  #kontakt .information-box {
+    padding-top: 60px;
+  }
+}
+
 #google-container {
   height: 600px;
+}
+
+@media (min-width: 992px) {
+  #google-container {
+    height: 500px;
+  }
+}
+
+footer {
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+footer .align-right {
+  text-align: right;
+}
+
+footer ul {
+  padding: 40px 0;
+  list-style-type: none;
+  color: #AAACAC;
+  font-size: 1.3em;
+}
+
+footer li {
+  float: left;
+  padding-right: 2em;
+  line-height: 40px;
+}
+
+footer .align-center {
+  text-align: center;
+  padding-top: 10px;
+  color: #AAACAC;
+}
+
+footer img {
+  vertical-align: middle;
+  max-width: 100%;
 }
 
 body,
@@ -2510,7 +2866,14 @@ html {
 
 body {
   font-family: "Tenor Sans", sans-serif;
-  line-height: 1.25;
+  font-size: 10px;
+  line-height: 2.1em;
+}
+
+@media (min-width: 480px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 h1,
@@ -2521,5 +2884,6 @@ h5,
 h6 {
   font-family: "Archivo Black", sans-serif;
   font-weight: 400;
+  letter-spacing: 0.05em;
 }
 /*# sourceMappingURL=global.css.map */

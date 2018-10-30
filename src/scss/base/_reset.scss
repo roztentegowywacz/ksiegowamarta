@@ -14,7 +14,9 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     padding: 0;
     border: 0;
     font-size: 100%;
-    vertical-align: baseline; }
+    font-weight: 400;
+    vertical-align: baseline; 
+  }
   
   /* HTML5 display-role reset for older browsers */
   
@@ -42,4 +44,5 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   
   table {
     border-collapse: collapse;
-  border-spacing: 0; }
+    border-spacing: 0; 
+  }
