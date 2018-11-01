@@ -1,3 +1,47 @@
+var navigation = document.getElementById('navigation');
+var hamburger  = document.getElementById('hamburger');
+var menu = document.getElementById('menu');
+
+var previewScrollPos = window.pageYOffset;
+window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (!navigation.classList.contains('isOpen')) {
+        if (previewScrollPos > currentScrollPos) {
+            navigation.style.top = '55px';
+        }
+        else {
+            navigation.style.top = '-55px';
+        }
+        previewScrollPos = currentScrollPos;
+    }
+};
+
+hamburger.onclick = function() {
+    var spans = this.getElementsByTagName('span');
+
+    navigation.classList.toggle('isOpen');
+
+    for (var i = 0; i < spans.length; i++) {
+        spans[i].classList.toggle('animate');
+    }
+    
+    var aaa = menu.getElementsByTagName('a');
+    if (menu.clientHeight == 0) {
+        menu.style.height = '85vh';
+        for (var i = 0; i < aaa.length; i++) {
+            aaa[i].style.color = 'black';
+        }
+    }
+    else {
+        menu.style.height = '0';
+        for (var i = 0; i < aaa.length; i++) {
+            aaa[i].style.color = 'white';
+        }
+    }
+};
+
+
+
 
 // Google Maps
 //set your google maps parameters
@@ -204,26 +248,3 @@ var marker = new google.maps.Marker({
     visible: true,
     icon: $marker_url,
 });
-
-//add custom buttons for the zoom-in/zoom-out on the map
-function CustomZoomControl(controlDiv, map) {
-    //grap the zoom elements from the DOM and insert them in the map 
-    var controlUIzoomIn= document.getElementById('cd-zoom-in'),
-        controlUIzoomOut= document.getElementById('cd-zoom-out');
-    controlDiv.appendChild(controlUIzoomIn);
-    controlDiv.appendChild(controlUIzoomOut);
-
-    // Setup the click event listeners and zoom-in or out according to the clicked element
-    google.maps.event.addDomListener(controlUIzoomIn, 'click', function() {
-        map.setZoom(map.getZoom()+1)
-    });
-    google.maps.event.addDomListener(controlUIzoomOut, 'click', function() {
-        map.setZoom(map.getZoom()-1)
-    });
-}
-
-var zoomControlDiv = document.createElement('div');
-var zoomControl = new CustomZoomControl(zoomControlDiv, map);
-
-//insert the zoom div on the top left of the map
-map.controls[google.maps.ControlPosition.LEFT_TOP].push(zoomControlDiv);

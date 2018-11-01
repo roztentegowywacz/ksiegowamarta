@@ -1,28 +1,134 @@
-@media (max-width: 768px) {
-    #main-nav .container {
-        width: 100%;
-        max-width: none;
+#navigation {
+    position: fixed;
+    z-index: 999;
+    top: 55px;
+    width: 100%;
+    left: 0;
+    transition: top 0.5s ease-out;
+}
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+}
+
+.logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: auto;
+    
+    img {
+        height: 100%;
+        width: auto;
     }
 }
-#main-nav {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    background-color: $white;
-    z-index: 100;
-    width: 100%;
-    // height: 50px;
 
-    a {
+
+.hamburger-wrapper {
+    position: absolute;
+    right: 15px;
+    z-index: 900;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#hamburger {
+    $bar-width: 40px;
+    $bar-height: 4px;
+    $bar-offset: 10px;
+    $bar-spacing: 6px;
+
+    position: relative;
+    width: $bar-width;
+    height: 100%;
+    padding: (($bar-height * 3 + $bar-spacing * 2) / 2) 0;
+    span {
         display: block;
-        height: 50px;
-        margin: 0;
-        padding: 0;
-        white-space: nowrap;
-        img {
-            vertical-align: middle;
-            // height: 10px;
-            max-width: 100%;
+        position: absolute;
+        height: $bar-height;
+        background: black;
+        border-radius: 2px;
+        right: 0;
+        transition: width .3s ease-out, top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+        
+        &:first-child {
+            width: $bar-width - $bar-offset * 2;
+            top: 0;
         }
+        
+        &:nth-child(2) {
+            top: $bar-height + $bar-spacing;
+            width: $bar-width - $bar-offset;
+            transition-delay: 0.1s;
+        }
+        
+        &:last-child {
+            top: $bar-height * 2 + $bar-spacing * 2;
+            width: $bar-width;
+        }
+    }
+    
+    &:hover {
+        cursor: pointer;
+        span {
+            width: $bar-width;
+        }
+    }
+
+    span.animate {
+        top: $bar-height + $bar-spacing;
+        width: $bar-width;
+        transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+        &:first-child {
+            transform: rotate(45deg);
+        }
+
+        &:nth-child(2) {
+            background: rgba(255, 255, 255, 0);
+        }
+
+        &:last-child {
+            transform: rotate(-45deg);
+        }
+
+    }
+}
+
+#menu {
+    background-color: white;
+    width: 100%; 
+    height: 0;   
+    transition: height 0.3s ease-out 0.3s;
+    overflow: hidden;
+    position: relative;
+    ul {
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        li {
+            padding: 2.5vh 0;
+            font-size: 1.6em;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        transition: color 0.1s ease-in;
+        &:hover {
+            color: #AAACAC;
+        }
+    }
+    span {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 20px;
+        color: #AAACAC;
     }
 }

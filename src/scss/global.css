@@ -2249,33 +2249,156 @@ table {
   height: 100vh;
 }
 
-@media (max-width: 768px) {
-  #main-nav .container {
-    width: 100%;
-    max-width: none;
-  }
-}
-
-#main-nav {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  background-color: #FFF;
-  z-index: 100;
+#navigation {
+  position: fixed;
+  z-index: 999;
+  top: 55px;
   width: 100%;
+  left: 0;
+  -webkit-transition: top 0.5s ease-out;
+  transition: top 0.5s ease-out;
 }
 
-#main-nav a {
-  display: block;
+.navbar {
+  width: 100%;
   height: 50px;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
+  background-color: white;
 }
 
-#main-nav a img {
-  vertical-align: middle;
-  max-width: 100%;
+.logo {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  height: 60%;
+  width: auto;
+}
+
+.logo img {
+  height: 100%;
+  width: auto;
+}
+
+.hamburger-wrapper {
+  position: absolute;
+  right: 15px;
+  z-index: 900;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+#hamburger {
+  position: relative;
+  width: 40px;
+  height: 100%;
+  padding: 12px 0;
+}
+
+#hamburger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  background: black;
+  border-radius: 2px;
+  right: 0;
+  -webkit-transition: width 0.3s ease-out, top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: width 0.3s ease-out, top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: width 0.3s ease-out, top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: width 0.3s ease-out, top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#hamburger span:first-child {
+  width: 20px;
+  top: 0;
+}
+
+#hamburger span:nth-child(2) {
+  top: 10px;
+  width: 30px;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+#hamburger span:last-child {
+  top: 20px;
+  width: 40px;
+}
+
+#hamburger:hover {
+  cursor: pointer;
+}
+
+#hamburger:hover span {
+  width: 40px;
+}
+
+#hamburger span.animate {
+  top: 10px;
+  width: 40px;
+  -webkit-transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#hamburger span.animate:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+#hamburger span.animate:nth-child(2) {
+  background: rgba(255, 255, 255, 0);
+}
+
+#hamburger span.animate:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#menu {
+  background-color: white;
+  width: 100%;
+  height: 0;
+  -webkit-transition: height 0.3s ease-out 0.3s;
+  transition: height 0.3s ease-out 0.3s;
+  overflow: hidden;
+  position: relative;
+}
+
+#menu ul {
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#menu ul li {
+  padding: 2.5vh 0;
+  font-size: 1.6em;
+}
+
+#menu a {
+  text-decoration: none;
+  color: black;
+  -webkit-transition: color 0.1s ease-in;
+  transition: color 0.1s ease-in;
+}
+
+#menu a:hover {
+  color: #AAACAC;
+}
+
+#menu span {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 20px;
+  color: #AAACAC;
 }
 
 #masthead {
@@ -2361,11 +2484,12 @@ table {
 
 @media (min-width: 1200px) {
   #masthead .ramka {
-    padding: 2.75% 0;
-    height: 400px;
+    padding: 40px 0 60px 0;
+    min-height: 400px;
+    height: auto;
   }
   #masthead h4 {
-    font-size: 5.0em;
+    font-size: 4.8em;
   }
   #masthead p {
     font-size: 1.6em;
@@ -2515,58 +2639,6 @@ table {
   border-right: solid 20px transparent;
 }
 
-#oferta {
-  background-image: url("../images/1x/offer-img-3-other.jpg");
-  background-position: 60% 160%;
-  overflow: hidden;
-}
-
-@media (min-width: 992px) {
-  #oferta {
-    background-position: 70% 80%;
-  }
-}
-
-#oferta h1 {
-  color: #FFF;
-  text-transform: uppercase;
-  font-size: 2em;
-  padding-top: 60px;
-  padding-bottom: 215px;
-  display: block;
-  position: relative;
-  z-index: 50;
-}
-
-@media (min-width: 768px) {
-  #oferta h1 {
-    padding-bottom: 465px;
-  }
-}
-
-@media (min-width: 992px) {
-  #oferta h1 {
-    padding-bottom: 220px;
-  }
-}
-
-@media (min-width: 1200px) {
-  #oferta h1 {
-    padding-bottom: 295px;
-    font-size: 2.4em;
-  }
-}
-
-#oferta .top {
-  z-index: 50;
-}
-
-#oferta .pomocnicza {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 #oferta .maska {
   width: 120%;
   height: 62.5px;
@@ -2587,75 +2659,6 @@ table {
   #oferta .maska {
     display: none;
   }
-}
-
-#oferta .maska2 {
-  display: none;
-}
-
-@media (min-width: 992px) {
-  #oferta .maska2 {
-    display: block;
-    width: 100%;
-    height: 1000px;
-    position: absolute;
-    left: -30%;
-    bottom: 0;
-    border-top: solid 1000px #4c6580;
-    border-right: solid 400px transparent;
-  }
-}
-
-#oferta .mountains .triangle-0 {
-  width: 20px;
-  height: 20px;
-  border-bottom: solid 20px #FFF;
-  border-left: solid 10px transparent;
-  border-right: solid 10px transparent;
-  margin-right: 20px;
-}
-
-#oferta h3 {
-  font-size: 2.6em;
-  color: #FFF;
-  padding: 40px 0;
-  text-transform: uppercase;
-}
-
-@media (min-width: 992px) {
-  #oferta h3 {
-    padding: 45px 0 35px 0;
-  }
-}
-
-@media (min-width: 1200px) {
-  #oferta h3 {
-    font-size: 4.2em;
-  }
-}
-
-#oferta ol {
-  margin-bottom: 60px;
-  color: #FFF;
-  font-size: 1.6em;
-}
-
-@media (min-width: 992px) {
-  #oferta ol {
-    font-size: 1em;
-    line-height: 1.5em;
-  }
-}
-
-@media (min-width: 1200px) {
-  #oferta ol {
-    font-size: 1.6em;
-    margin-bottom: 110px;
-  }
-}
-
-#oferta ol li {
-  margin-bottom: 10px;
 }
 
 #wspolpraca {
