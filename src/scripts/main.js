@@ -1,6 +1,7 @@
 var navigation = document.getElementById('navigation');
 var hamburger  = document.getElementById('hamburger');
 var menu = document.getElementById('menu');
+var aaa = menu.getElementsByTagName('a');
 
 var previewScrollPos = window.pageYOffset;
 window.onscroll = function() {
@@ -25,17 +26,16 @@ hamburger.onclick = function() {
         spans[i].classList.toggle('animate');
     }
     
-    var aaa = menu.getElementsByTagName('a');
     if (menu.clientHeight == 0) {
         menu.style.height = '85vh';
         for (var i = 0; i < aaa.length; i++) {
-            aaa[i].style.color = 'black';
+            aaa[i].style.display = 'block';
         }
     }
     else {
         menu.style.height = '0';
         for (var i = 0; i < aaa.length; i++) {
-            aaa[i].style.color = 'white';
+            aaa[i].style.display = 'none';
         }
     }
 };

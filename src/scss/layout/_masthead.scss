@@ -7,6 +7,7 @@
     background-position: 0% 40%;
     color: $white;
     text-align: center;
+    position: relative;
     
     h4 {
         text-transform: uppercase;
@@ -92,5 +93,69 @@
             // margin-top: 35px;
             padding: 0 10%;
         }
+    }
+}
+.button-wrapper {
+    // overflow: hidden;
+    position: absolute;
+    bottom: -30px;
+    transform: translateX(-50%);
+}
+.button-left {
+    left: 40%;
+}
+.button-right {
+    left: 60%;
+}
+.button {
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+.button-title {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.2em;
+    width: 200px;
+    height: 200px;
+}
+.button-title-text {
+    fill: white;
+    font-family: $heading-font;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.button-arrow {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    padding-top: 15%;
+    background-color: white;
+    border-radius: 50%;
+}
+.button-arrow:after {
+	content: '';
+	display: block;
+	width: 22px;
+    height: 22px;
+    margin: auto;
+	transform: rotate(45deg);
+	border-bottom: 3px solid #8BAEC5;
+	border-right: 3px solid #8BAEC5;
+    animation: arrow-anim 2s cubic-bezier(0,0.8,0.55,0.86) infinite;
+}
+
+@keyframes arrow-anim {
+    0% {
+      transform: rotate(45deg) translate(0, 0);
+    }
+    60% {
+      transform: rotate(45deg) translate(70%, 70%);
     }
 }
