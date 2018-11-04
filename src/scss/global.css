@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
  * Bootstrap Grid v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -2727,25 +2728,181 @@ table {
   border-right: solid 20px transparent;
 }
 
-#oferta .maska {
-  width: 120%;
-  height: 62.5px;
-  position: absolute;
-  left: -15px;
-  bottom: 0;
-  border-bottom: solid 625px #4c6580;
-  border-right: solid 1300px transparent;
+#oferta {
+  position: relative;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  #oferta .maska {
-    left: -50px;
+.static-content-wrapper {
+  position: absolute;
+  z-index: 100;
+}
+
+.static-content-wrapper h1 {
+  padding-top: 100px;
+  padding-bottom: 250px;
+  text-transform: uppercase;
+  color: white;
+  font-size: 33px;
+}
+
+.dot {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: 1.8em;
+  color: white;
+  display: inline-block;
+  -webkit-transform: rotate(-90deg) scaleY(1.25);
+          transform: rotate(-90deg) scaleY(1.25);
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.dot::after {
+  content: '▷';
+}
+
+.dot:hover {
+  content: '▶';
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.gradient-mask {
+  position: absolute;
+  z-index: 50;
+  width: 100%;
+  height: 200%;
+  top: -50%;
+  left: -60%;
+  -webkit-transform: rotate(25deg);
+          transform: rotate(25deg);
+  background: #97a6b9;
+  background: linear-gradient(135deg, #97a6b9 0%, #8595ac 30%, #60768e 60%, #576c87 100%);
+}
+
+.active::after {
+  content: '▶';
+}
+
+.mySlides {
+  display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  height: 100vh;
+  margin: auto;
+}
+
+.slideshow-container .mySlides img {
+  width: 100%;
+  height: 100%;
+}
+
+.prev, .next {
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 100;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: -25px;
+  color: white;
+  line-height: 85px;
+  font-size: 60px;
+  text-align: right;
+  padding-right: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  -webkit-transition: 0.6s ease;
+  transition: 0.6s ease;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.prev:active, .next:active {
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+}
+
+.prev:active {
+  padding-right: 50px;
+}
+
+.next {
+  left: auto;
+  right: -25px;
+  text-align: left;
+  padding-left: 30px;
+  padding-right: 0;
+}
+
+.next:active {
+  padding-left: 50px;
+}
+
+.slide-text {
+  position: absolute;
+  z-index: 100;
+  top: 430px;
+  width: 100%;
+  color: white;
+  padding-top: 45px;
+  padding-bottom: 110px;
+}
+
+.slide-text h3 {
+  font-size: 59px;
+  text-transform: uppercase;
+  padding-bottom: 45px;
+}
+
+.slide-text ol {
+  font-size: 23px;
+  line-height: 2em;
+}
+
+.slide-text ol li:before {
+  content: '〉';
+  font-size: 0.8em;
+  font-weight: bold;
+  padding-right: 20px;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-@media (min-width: 992px) {
-  #oferta .maska {
-    display: none;
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next, .text {
+    font-size: 11px;
   }
 }
 

@@ -41,6 +41,91 @@ hamburger.onclick = function() {
 };
 
 
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+
+// SLIDER
+// class Slider {
+//     constructor(elemSelector) {
+//         this.sliderSelector = elemSelector;
+//         this.currentSlide = 0;
+//         this.time = null;
+//         this.slider = document.querySelector(this.sliderSelector);
+//         this.elem = null;
+//         this.slides = document.querySelectorAll('.slider-slide');
+
+//         this.prev = document.querySelector('slider-button-prev');
+//         this.next = document.querySelector('slider-button-next');
+//         this.dots = [];
+
+//         this.prev.addEventListener('click', this.slidePrev.bind(this));
+//         this.next.addEventListener('click', this.slideNext.bind(this));
+
+//         this.changeSlide(this.currentSlide);
+//     }
+//     slidePrev() {
+//         this.currentSlide--;
+//         if (this.currentSlide < 0) {
+//             this.currentSlide = this.slides.length - 1;
+//         }
+//         this.changeSlide(this.currentSlide);
+//     }
+//     slideNext() {
+//         this.currentSlide++;
+//         if (this.currentSlide > this.slides.length - 1) {
+//             this.currentSlide = 0;
+//         }
+//         this.changeSlide(this.currentSlide);
+//     }
+//     changeSlide(index) {
+//         [...this.slides].forEach(function(slide) {
+//             slide.classList.remove('slider-slide-active');
+//         });
+
+//         this.dots.forEach(function(dot) {
+//             dot.classList.remove('slider-dots-element-active');
+//         });
+//         this.dots[index].classList.add('slider-dots-element-active');
+
+//         this.currentSlide = index;
+
+//         clearInterval(this.time);
+//         this.time = setTimeout(function() {
+//             this.slideNext();
+//         }.bind(this));
+//     }
+// }
+
+
+//wywołanie bez opcji
+// const slide = new Slider('#slider1');
+
 
 
 // Google Maps
