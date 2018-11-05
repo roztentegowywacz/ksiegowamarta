@@ -1,10 +1,18 @@
+console.clear();
+
 var navigation = document.getElementById('navigation');
 var hamburger  = document.getElementById('hamburger');
 var menu = document.getElementById('menu');
 var aaa = menu.getElementsByTagName('a');
+var flag = false;
 
 var previewScrollPos = window.pageYOffset;
-window.onscroll = function() {
+// window.onscroll = function() {
+    
+// }
+window.onscroll = hidenav;
+
+function hidenav() {
     var currentScrollPos = window.pageYOffset;
     if (!navigation.classList.contains('isOpen')) {
         if (previewScrollPos > currentScrollPos) {
@@ -15,13 +23,13 @@ window.onscroll = function() {
         }
         previewScrollPos = currentScrollPos;
     }
-};
+}
 
-hamburger.onclick = function() {
+function togglenav() {
     var spans = this.getElementsByTagName('span');
-
+    
     navigation.classList.toggle('isOpen');
-
+    
     for (var i = 0; i < spans.length; i++) {
         spans[i].classList.toggle('animate');
     }
@@ -38,7 +46,44 @@ hamburger.onclick = function() {
             aaa[i].style.display = 'none';
         }
     }
-};
+}
+
+// hamburger.onclick = function() {
+    // };
+hamburger.onclick = togglenav;
+    
+var links = document.getElementsByClassName('scroll-link');
+
+for (var i = 0; i < links.length; i++) {
+    // links[i].onclick = scroll;
+    links[i].addEventListener('click', scroll, false);
+    // links[i].addEventListener('click', togglenav, false);
+    // links[i].addEventListener('click', hidenav, false);
+}
+
+function scroll(e) {
+    e.preventDefault();
+    var id = this.getAttribute('href').replace('#', '');
+    var target = document.getElementById(id).getBoundingClientRect().top;
+    flag = true;
+    animateScroll(target);
+}
+function animateScroll(targetHeight) {
+    targetHeight = document.body.scrollHeight - window.innerHeight > targetHeight + scrollY ? 
+        targetHeight : document.body.scrollHeight - window.innerHeight;
+    var initialPosition = window.scrollY;
+    var SCROLL_DURATION = 30;
+    var step_x = Math.PI / SCROLL_DURATION;
+    var step_count = 0;
+    requestAnimationFrame(step);
+    function step() {
+        if (step_count < SCROLL_DURATION) {
+            requestAnimationFrame(step);
+            step_count++;
+            window.scrollTo(0, initialPosition + targetHeight * 0.25 * Math.pow((1 - Math.cos(step_x * step_count)), 2));
+        }
+    }
+}
 
 
 var slideIndex = 1;
@@ -67,65 +112,6 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";  
   dots[slideIndex-1].className += " active";
 }
-
-
-
-// SLIDER
-// class Slider {
-//     constructor(elemSelector) {
-//         this.sliderSelector = elemSelector;
-//         this.currentSlide = 0;
-//         this.time = null;
-//         this.slider = document.querySelector(this.sliderSelector);
-//         this.elem = null;
-//         this.slides = document.querySelectorAll('.slider-slide');
-
-//         this.prev = document.querySelector('slider-button-prev');
-//         this.next = document.querySelector('slider-button-next');
-//         this.dots = [];
-
-//         this.prev.addEventListener('click', this.slidePrev.bind(this));
-//         this.next.addEventListener('click', this.slideNext.bind(this));
-
-//         this.changeSlide(this.currentSlide);
-//     }
-//     slidePrev() {
-//         this.currentSlide--;
-//         if (this.currentSlide < 0) {
-//             this.currentSlide = this.slides.length - 1;
-//         }
-//         this.changeSlide(this.currentSlide);
-//     }
-//     slideNext() {
-//         this.currentSlide++;
-//         if (this.currentSlide > this.slides.length - 1) {
-//             this.currentSlide = 0;
-//         }
-//         this.changeSlide(this.currentSlide);
-//     }
-//     changeSlide(index) {
-//         [...this.slides].forEach(function(slide) {
-//             slide.classList.remove('slider-slide-active');
-//         });
-
-//         this.dots.forEach(function(dot) {
-//             dot.classList.remove('slider-dots-element-active');
-//         });
-//         this.dots[index].classList.add('slider-dots-element-active');
-
-//         this.currentSlide = index;
-
-//         clearInterval(this.time);
-//         this.time = setTimeout(function() {
-//             this.slideNext();
-//         }.bind(this));
-//     }
-// }
-
-
-//wywołanie bez opcji
-// const slide = new Slider('#slider1');
-
 
 
 // Google Maps
