@@ -2246,6 +2246,143 @@ table {
   vertical-align: middle;
 }
 
+#loader {
+  display: block;
+}
+
+#loader svg {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 999;
+  display: block;
+}
+
+#loader h5 {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 999;
+  display: block;
+  -webkit-animation: stroke-reveal 3s ease infinite;
+          animation: stroke-reveal 3s ease infinite;
+}
+
+.animate-bottom {
+  -webkit-animation-name: animatebottom;
+          animation-name: animatebottom;
+  -webkit-animation-duration: 0.75s;
+          animation-duration: 0.75s;
+}
+
+@-webkit-keyframes animatebottom {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+#load-wrapper {
+  display: none;
+}
+
+.abc {
+  stroke: black;
+  stroke-miterlimit: 10;
+  stroke-dasharray: 250;
+  stroke-dashoffset: 0;
+  -webkit-animation: stroke-reveal 3s ease infinite;
+          animation: stroke-reveal 3s ease infinite;
+}
+
+@-webkit-keyframes stroke-reveal {
+  0% {
+    stroke-dashoffset: 260;
+    stroke-opacity: 0.8;
+    opacity: 0.8;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 0.5;
+    opacity: 0.5;
+  }
+  100% {
+    stroke-dashoffset: 260;
+    stroke-opacity: 0.8;
+    opacity: 0.8;
+  }
+}
+
+@keyframes stroke-reveal {
+  0% {
+    stroke-dashoffset: 260;
+    stroke-opacity: 0.8;
+    opacity: 0.8;
+  }
+  50% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 0.5;
+    opacity: 0.5;
+  }
+  100% {
+    stroke-dashoffset: 260;
+    stroke-opacity: 0.8;
+    opacity: 0.8;
+  }
+}
+
+#masthead2 {
+  min-height: 100%;
+  top: 0;
+  position: relative;
+}
+
+#masthead2 .ramka {
+  margin-top: 40%;
+}
+
+@media (min-width: 768px) {
+  #masthead2 .ramka {
+    margin-top: 50vh;
+    -webkit-transform: translateY(-257.5px);
+            transform: translateY(-257.5px);
+    padding: 10% 5%;
+    height: 515px;
+    border: #FFF 3px solid;
+    position: absolute;
+  }
+}
+
+@media (min-width: 992px) {
+  #masthead2 .ramka {
+    padding: 5%;
+    height: 300px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #masthead2 .ramka {
+    padding: 40px 0 60px 0;
+    min-height: 400px;
+    height: auto;
+  }
+}
+
 .wrapper {
   height: 100vh;
 }
@@ -2253,17 +2390,29 @@ table {
 #navigation {
   position: fixed;
   z-index: 999;
-  top: 55px;
+  top: 0;
   width: 100%;
   left: 0;
   -webkit-transition: top 0.5s ease-out;
   transition: top 0.5s ease-out;
 }
 
+@media (min-width: 992px) {
+  #navigation {
+    top: 55px;
+  }
+}
+
 .navbar {
   width: 100%;
-  height: 50px;
+  height: 75px;
   background-color: white;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    height: 50px;
+  }
 }
 
 .logo {
@@ -2271,8 +2420,14 @@ table {
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  height: 60%;
+  height: 30px;
   width: auto;
+}
+
+@media (min-width: 576px) {
+  .logo {
+    height: 38px;
+  }
 }
 
 .logo img {
@@ -2442,7 +2597,8 @@ table {
     padding: 10% 5%;
     height: 515px;
     border: #FFF 3px solid;
-    position: relative;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.1);
   }
   #masthead h4 {
     line-height: 1em;
@@ -2451,7 +2607,7 @@ table {
   #masthead .mountains-img {
     display: block;
   }
-  #masthead .mountains-img img {
+  #masthead .mountains-img img, #masthead .mountains-img svg {
     position: absolute;
     bottom: 0;
     left: 50%;
@@ -2505,11 +2661,35 @@ table {
 }
 
 .button-left {
-  left: 40%;
+  left: 25%;
+}
+
+@media (min-width: 768px) {
+  .button-left {
+    left: 35%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button-left {
+    left: 40%;
+  }
 }
 
 .button-right {
-  left: 60%;
+  left: 75%;
+}
+
+@media (min-width: 768px) {
+  .button-right {
+    left: 65%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .button-right {
+    left: 60%;
+  }
 }
 
 .button {
@@ -3253,7 +3433,6 @@ footer .align-right {
 footer ul {
   padding: 40px 0;
   list-style-type: none;
-  color: #AAACAC;
   font-size: 1.3em;
 }
 
@@ -3272,6 +3451,25 @@ footer .align-center {
 footer img {
   vertical-align: middle;
   max-width: 100%;
+}
+
+footer .scrollTop {
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+footer .scrollTop:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+footer a {
+  color: #AAACAC;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: rgba(0, 0, 0, 0.7);
 }
 
 body,

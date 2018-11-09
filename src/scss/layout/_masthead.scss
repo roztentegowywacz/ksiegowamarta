@@ -33,13 +33,15 @@
     
     @include md {
         .ramka {
-            // margin-top: 20%;
+            // margin-top: 40%;
             margin-top: 50vh;
             transform: translateY(-(515px / 2));
             padding: 10% 5%;
             height: 515px;
             border: $white 3px solid;
-            position: relative;
+            // position: relative;
+            position: absolute;
+            background-color: rgba(255,255,255,0.1);
         }
         h4 {
             line-height: 1em;
@@ -47,7 +49,7 @@
         }
         .mountains-img {
             display: block;
-            img {
+            img, svg {
                 position: absolute;
                 bottom: 0;
                 left: 50%;
@@ -98,14 +100,27 @@
 .button-wrapper {
     // overflow: hidden;
     position: absolute;
+    // top: auto;
     bottom: -30px;
     transform: translateX(-50%);
 }
 .button-left {
-    left: 40%;
+    left: 25%;
+    @include md {
+        left: 35%;
+    }
+    @include xl {
+        left: 40%;
+    }
 }
 .button-right {
-    left: 60%;
+    left: 75%;
+    @include md {
+        left: 65%;
+    }
+    @include xl {
+        left: 60%;
+    }
 }
 .button {
     display: block;

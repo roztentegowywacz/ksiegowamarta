@@ -1,0 +1,101 @@
+
+
+#loader {
+    display: block;
+    svg {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        display: block;
+    }
+    h5 {
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+        display: block;
+        animation: stroke-reveal 3s ease infinite;
+    }
+}
+
+.animate-bottom {
+    animation-name: animatebottom;
+    animation-duration: 0.75s
+  }
+  
+  @keyframes animatebottom { 
+    from{opacity:0 } 
+    to{opacity:1 }
+  }
+  
+  #load-wrapper {
+    display: none;
+  }
+
+  .abc {
+    stroke: black;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 250;
+    stroke-dashoffset: 0;
+    animation: stroke-reveal 3s ease infinite;
+  }
+  
+  @keyframes stroke-reveal {
+    0% {
+      stroke-dashoffset: 260;
+      stroke-opacity: 0.8;
+      opacity: 0.8;    
+    }
+    50% {
+      stroke-dashoffset: 0;
+      stroke-opacity: 0.5;    
+      opacity: 0.5;
+    }
+    100% {
+        stroke-dashoffset: 260;
+        stroke-opacity: 0.8;    
+        opacity: 0.8;
+      }
+  }
+
+
+  // Styling for the masthead
+
+    #masthead2 {
+        min-height: 100%;
+        top: 0;
+        position: relative;
+        
+    
+        .ramka {
+            margin-top: 40%;
+        }
+        
+        @include md {
+            .ramka {
+                margin-top: 50vh;
+                transform: translateY(-(515px / 2));
+                padding: 10% 5%;
+                height: 515px;
+                border: $white 3px solid;
+                position: absolute;
+            }
+        }
+        @include lg {
+            .ramka {
+                padding: 5%;
+                height: 300px;
+            }
+        }
+        @include xl {
+            .ramka {
+                padding: 40px 0 60px 0;
+                min-height: 400px;
+                height: auto;
+            }
+        }
+    }
+
