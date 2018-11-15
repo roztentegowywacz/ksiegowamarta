@@ -7,11 +7,22 @@
     position: absolute;
     z-index: 100;
     h1 {
-        padding-top: 100px;
-        padding-bottom: 250px;
+        padding-top: 60px;
+        padding-bottom: 200px;
         text-transform: uppercase;
         color: white;
-        font-size: 33px;
+        font-size: 28px;
+        @include md {
+            padding-bottom: 400px;
+        }
+        @include lg {
+            padding-bottom: 220px;
+        }
+        @include xl {
+            font-size: 33px;
+            padding-bottom: 295px;
+            padding-top: 110px;
+        }
     }
 }
 .dot {
@@ -30,16 +41,31 @@
         color: rgba(255,255,255,0.55);
     }
 }
+
 .gradient-mask {
     position: absolute;
     z-index: 50;
-    width: 100%;
+    width: 220%;
     height: 200%;
-    top: -50%;
-    left: -60%;
-    transform: rotate(25deg);
+    top: 0;
+    right: -90%;
+    transform: rotate(-65deg);
     background: rgb(151,166,185);
     background: linear-gradient(135deg, rgba(151,166,185,1) 0%, rgba(133,149,172,1) 30%, rgba(96,118,142,1) 60%, rgba(87,108,135,1) 100%);
+    @include sm {
+        width: 180%;
+        right: -20%;
+        // top: 80%;
+    }
+    @include md {
+        width: 100%;
+    }
+    @include lg {
+        transform: rotate(25deg);
+        top: -50%;
+        left: -60%;
+        right: auto;
+    }
 }
 
 .active {
@@ -54,21 +80,48 @@
 /* Slideshow container */
 .slideshow-container {
     position: relative;
-    // width: 100%;
-    height: 100vh;
-    // height: 100%;
+    min-height: 100vh;
+    height: 850px;
     margin: auto;
+    background-color: #5D738C;
+    @include xs {
+        height: 950px;
+    }
+    @include md {
+        height: 1100px;
+    }
+    @include lg {
+        height: 700px;
+        min-height: 10vh;
+    }
+    @include xl {
+        height: 1000px;
+    }
     .mySlides {
-        width: 100%;
-        height: 100%;
+
         img {
-            width: 100%;
-            height: 100%;
+            position: absolute;
+            display: block;
+            width: auto;
+            height: 500px;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            @include md {
+                height: 800px;
+            }
+            @include xl {
+                left: auto;
+                right: 0;
+                transform: translateX(0);
+                height: 1000px;
+            }
         }
     }
 }
 
 .prev, .next {
+    display: none;
     cursor: pointer;
     width: 100px;
     height: 100px;
@@ -85,6 +138,9 @@
     border: 1px solid white;
     border-radius: 50%;
     transition: 0.6s ease;
+    @include xl {
+        display: initial;
+    }
     &:hover {
         background-color: rgba(0,0,0,0.25);
     }
@@ -109,25 +165,55 @@
 .slide-text {
     position: absolute;
     z-index: 100;
-    top: 430px;
+    top: 340px;
     width: 100%;
     color: white;
-    padding-top: 45px;
-    padding-bottom: 110px;
+    // padding-top: 40px;
+    padding-bottom: 60px;
+    @include md {
+        top: 560px;
+    }
+    @include lg {
+        top: 380px;
+    }
+    @include xl {
+        top: 520px;
+    }
     h3 {
-        font-size: 59px;
+        font-size: 32px;
         text-transform: uppercase;
-        padding-bottom: 45px;
+        padding-bottom: 40px;
+        line-height: 40px;
+        @include md {
+            font-size: 37px;
+        }
+        @include xl {
+            font-size: 59px;
+        }
     }
     ol {
-        font-size: 23px;
-        line-height: 2em;
+        font-size: 1.6em;
+        // line-height: 2em;
+        padding-left: 15px;
+        position: relative;
+        @include md {
+            padding-left: 25px;
+            line-height: 1.5em;
+        }
+        @include lg {
+            font-size: 14px;
+        }
+        @include xl {
+            font-size: 23px;
+        }
         li {
+            padding-bottom: 5px;
             &:before {
                 content: '〉';
                 font-size: 0.8em;
                 font-weight: bold;
-                padding-right: 20px;
+                position: absolute;
+                left: 0;
             }
         }
     }
@@ -143,8 +229,3 @@
     from {opacity: .75} 
     to {opacity: 1}
 }
-
-/* On smaller screens, decrease text size */
-// @media only screen and (max-width: 300px) {
-//     .prev, .next,.text {font-size: 11px}
-// }

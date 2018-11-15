@@ -13,7 +13,7 @@ var previewScrollPos = window.pageYOffset;
 var myVar;
 
 function myFunction() {
-    myVar = setTimeout(showPage, 3);
+    myVar = setTimeout(showPage, 2000);
 }
 
 function showPage() {
@@ -113,8 +113,14 @@ function animateScroll(targetHeight) {
 }
 
 
-var slideIndex = 1;
-    showSlides(slideIndex);
+var slideIndex = 0;
+    // showSlides(slideIndex);
+    sliderStart();
+
+function sliderStart() {
+    plusSlides(1);
+    setTimeout(sliderStart, 6000);
+}
 
 function plusSlides(n) {
     showSlides(slideIndex += n);

@@ -13,7 +13,7 @@ var previewScrollPos = window.pageYOffset;
 var myVar;
 
 function myFunction() {
-    myVar = setTimeout(showPage, 3);
+    myVar = setTimeout(showPage, 2000);
 }
 
 function showPage() {
@@ -113,8 +113,14 @@ function animateScroll(targetHeight) {
 }
 
 
-var slideIndex = 1;
-    showSlides(slideIndex);
+var slideIndex = 0;
+    // showSlides(slideIndex);
+    sliderStart();
+
+function sliderStart() {
+    plusSlides(1);
+    setTimeout(sliderStart, 6000);
+}
 
 function plusSlides(n) {
     showSlides(slideIndex += n);
@@ -143,8 +149,8 @@ function showSlides(n) {
 
 // Google Maps
 //set your google maps parameters
-var $latitude = 49.5849313,
-    $longitude = 20.6682586,
+var $latitude = 49.5886000,
+    $longitude = 20.6740000,
     $map_zoom = 15;
 
 //google map custom marker icon - .png fallback for IE11
@@ -153,250 +159,8 @@ var $marker_url = ( is_internetExplorer11 ) ? 'https://s3-us-west-2.amazonaws.co
 
 //we define here the style of the map
 var style= [
-    {
-        "featureType": "all",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#2b353a"
-            },
-            {
-                "saturation": "-29"
-            },
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "color": "#26282a"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#252e30"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "gamma": 0.01
-            },
-            {
-                "lightness": 20
-            },
-            {
-                "color": "#ffffff"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "saturation": -31
-            },
-            {
-                "lightness": -33
-            },
-            {
-                "weight": 1
-            },
-            {
-                "gamma": 1
-            }
-        ]
-    },
-    {
-        "featureType": "all",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": 30
-            },
-            {
-                "saturation": 30
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.fill",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "saturation": "-100"
-            },
-            {
-                "lightness": "-37"
-            },
-            {
-                "gamma": "1.27"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape.man_made",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "weight": "2"
-            },
-            {
-                "saturation": "-100"
-            },
-            {
-                "lightness": "-37"
-            },
-            {
-                "gamma": "1.27"
-            }
-        ]
-    },
-   
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "saturation": 20
-            }
-        ]
-    },
-    {
-        "featureType": "poi.business",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "off"
-            },
-            {
-                "saturation": "0"
-            },
-            {
-                "hue": "#0700ff"
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": 20
-            },
-            {
-                "saturation": -20
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "elementType": "all",
-        "stylers": [
-            {
-                "visibility": "on"
-            },
-            {
-                "hue": "#ff1800"
-            },
-            {
-                "saturation": "2"
-            },
-            {
-                "lightness": "2"
-            },
-            {
-                // "weight": "0.75"
-            }
-        ]
-    },
-    {
-        "featureType": "road.arterial",
-        "elementType": "labels.icon",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": 10
-            },
-            {
-                "saturation": -30
-            },
-            {
-                "weight": 2.75
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "saturation": 25
-            },
-            {
-                "lightness": 25
-            },
-            {
-                "weight": 1.75
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "elementType": "all",
-        "stylers": [
-            {
-                "lightness": -20
-            }
-        ]
-    }
+    
+        
 ];
     
 //set google map options
