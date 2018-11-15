@@ -78,7 +78,6 @@ function togglenav() {
 
     
 var links = document.getElementsByClassName('scroll-link');
-// var manuLinks = document.getElementsByClassName('menu-link');
 
 for (var i = 0; i < links.length; i++) {
     links[i].addEventListener('click', scroll, false);
@@ -114,7 +113,6 @@ function animateScroll(targetHeight) {
 
 
 var slideIndex = 0;
-    // showSlides(slideIndex);
     sliderStart();
 
 function sliderStart() {
@@ -148,21 +146,18 @@ function showSlides(n) {
 
 
 // Google Maps
-//set your google maps parameters
 var $latitude = 49.5886000,
     $longitude = 20.6740000,
     $map_zoom = 15;
 
-//google map custom marker icon - .png fallback for IE11
 var is_internetExplorer11= navigator.userAgent.toLowerCase().indexOf('trident') > -1;
 var $marker_url = ( is_internetExplorer11 ) ? 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location.png' : 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-location_1.svg';
 
-//we define here the style of the map
 var style= [
     
         
 ];
-    
+
 //set google map options
 var map_options = {
     center: new google.maps.LatLng($latitude, $longitude),

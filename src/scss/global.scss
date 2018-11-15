@@ -3,7 +3,6 @@
 
 
 // BASE - Base Variable file along with starting point Mixins and Placeholders.
-
 @import 'base/reset';
 @import 'base/variables';
 @import 'base/functions';
@@ -13,16 +12,10 @@
 
 // FRAMEWORK - Structure and layout files.
 
-// @import 'framework/_grid.scss';
 @import 'framework/breakpoints';
-// @import 'framework/_layout.scss';
-
 
 // COMPONENTS - Used components in site.
 @import 'components/helper';
-// @import 'modules/_buttons.scss';
-// @import 'modules/_lists.scss';
-// @import 'modules/_tabs.scss';
 
 // LAYOUT
 @import 'layout/_loader';
@@ -37,8 +30,6 @@
 
 body,
 html {
-    // width: 100vw;
-    // height: 100%;
     overflow-x: hidden;
 }
 

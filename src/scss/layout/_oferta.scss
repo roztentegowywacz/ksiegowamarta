@@ -1,5 +1,4 @@
 #oferta {
-    // min-height: 100vh;
     position: relative;
     overflow: hidden;
 }
@@ -55,7 +54,6 @@
     @include sm {
         width: 180%;
         right: -20%;
-        // top: 80%;
     }
     @include md {
         width: 100%;
@@ -168,7 +166,6 @@
     top: 340px;
     width: 100%;
     color: white;
-    // padding-top: 40px;
     padding-bottom: 60px;
     @include md {
         top: 560px;
@@ -193,7 +190,6 @@
     }
     ol {
         font-size: 1.6em;
-        // line-height: 2em;
         padding-left: 15px;
         position: relative;
         @include md {
