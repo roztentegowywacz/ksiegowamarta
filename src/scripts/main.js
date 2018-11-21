@@ -113,7 +113,12 @@ function animateScroll(targetHeight) {
 
 
 var slideIndex = 0;
+if (lg.matches) {
+    showSlides(slideIndex);
+}
+else {
     sliderStart();
+}
 
 function sliderStart() {
     plusSlides(1);
